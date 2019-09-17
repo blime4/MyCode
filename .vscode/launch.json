@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "java"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Inheritance",
             "request": "launch",
             "mainClass": "Inheritance",
