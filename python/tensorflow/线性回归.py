@@ -38,7 +38,6 @@ with g.as_default():
                     wb_.append(sess.run([w,b]))
             print(10,sess.run([w,b]))
 
-
 # out:
 # 0 [array([[0.30068117, 0.49728695, 0.09489334]], dtype=float32), -0.18552221]
 # 5 [array([[0.30072367, 0.4999596 , 0.10111057]], dtype=float32), -0.19938989]
