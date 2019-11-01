@@ -13,6 +13,9 @@ BOT_NAME = 'chinanews_crawler'
 
 SPIDER_MODULES = ['chinanews_crawler.spiders']
 NEWSPIDER_MODULE = 'chinanews_crawler.spiders'
+# FEED_EXPORT_ENCODING = 'utf-8'
+FEED_EXPORT_ENCODING = 'GBK'
+# FEED_EXPORT_ENCODING = 'GB2312'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -66,7 +69,7 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'chinanews_crawler.pipelines.ChinanewsCrawlerPipeline': 300,
+  #  'chinanews_crawler.pipelines.ChinanewsCrawlerPipeline': 300,
    'chinanews_crawler.pipelines.JsonWithEncodingPipeline':300,
 }
 
