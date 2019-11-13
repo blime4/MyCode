@@ -1,0 +1,20 @@
+﻿1、双击运行安装包
+
+2、右键，以管理员身份运行破解机
+
+3、随意填写邮箱地址，点击下方按钮完成破解
+
+4、按照这个路径C:\Windows\System32\drivers\etc\hosts，打开hosts文件，然后在文本末添加下面这几条网址，可起到屏蔽检测和更新的作用。
+
+0.0.0.0              cert.bandicam.com
+127.0.0.1            bandicam.com
+127.0.0.1            ssl.bandicam.com
+127.0.0.1            ssl.bandisoft.com
+127.0.0.1            cert.bandicam.com
+
+
+
+
+
+
+

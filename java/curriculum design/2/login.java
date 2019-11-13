@@ -2,7 +2,9 @@ import java.awt.*;
 import javax.swing.*;
 
 public class login extends JFrame{
-    JPanel loginPanel,passwordPanel,buttonPanel;
+
+    private static final long serialVersionUID = 1L;
+    JPanel loginPanel, passwordPanel, buttonPanel;
     JButton loginButton,cancelButton;
     JLabel loginLabel,passwordLabel;
     JTextField loginTextField;

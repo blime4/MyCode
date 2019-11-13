@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - SimpleChatServerApp",
+            "request": "launch",
+            "mainClass": "SimpleChatServerApp",
+            "projectName": "Mycode_fb761edc"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Test",
             "request": "launch",
             "mainClass": "Test",
