@@ -24,7 +24,7 @@
   fy '句子'
   ```
 
-![深度截图_选择区域_20190719203649](/newdisk/new_start/mine/MYMD/linux/image/深度截图_选择区域_20190719203649.png)
+
 
 
 
@@ -38,7 +38,7 @@
 
 + 如果有报错  **Error: spawn festival ENOENT**
 
-  ![深度截图_选择区域_20190719203756](/newdisk/new_start/mine/MYMD/linux/image/深度截图_选择区域_20190719203756.png)
+  
 
   ```
   sudo pacman -S festival
