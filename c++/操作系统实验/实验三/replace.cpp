@@ -8,20 +8,21 @@
 using namespace std;
 
 
-void read();
-void OPT();
-void FIFO();
-void LRU();
-void LFU();
+void read_xsb();
+void OPT_xsb();
+void FIFO_xsb();
+void LRU_xsb();
+void LFU_xsb();
 
 int kuaishu;        //内存块数
 int len;            //数据长度
 int *data;          //数据
 
 int main(){
-    read();
+    puts("计科173谢绍波1706100109");
+    read_xsb();
 }
-void read(){
+void read_xsb(){
     fstream input("data.txt",ios::in);
     if(!input){
         cerr << "File open error!\n";
@@ -39,16 +40,16 @@ void read(){
                 cout << data[i]<<" ";
             }
             cout << endl;
-            OPT();
-            FIFO();
-            LRU();
-            LFU();
+            OPT_xsb();
+            FIFO_xsb();
+            LRU_xsb();
+            LFU_xsb();
         }
     }
     input.close();
 }
 
-void OPT(){
+void OPT_xsb(){
     /*
     思路：
     if 页框内是否有：
@@ -103,7 +104,7 @@ void OPT(){
    cout<<"\nOPT 缺页数:"<<count<<"\t访问命中率:"<<float(1-float(count)/float(len))<<endl;
 }
 
-void FIFO(){
+void FIFO_xsb(){
     /*
     思路：
     if 页框内是否有：
@@ -134,11 +135,15 @@ void FIFO(){
             count++;
             memory[count%kuaishu]=item;
         }
+        // for(auto val:memory){
+        //    cout<<val<<" ";
+        // }
+        // cout<<endl;
     }
-    cout<<"FIFO 缺页数:"<<count-kuaishu<<"\t访问命中率:"<<float(1-float(count-kuaishu)/float(len))<<endl;
+    cout<<"FIFO_xsb 缺页数:"<<count-kuaishu<<"\t访问命中率:"<<float(1-float(count-kuaishu)/float(len))<<endl;
 }
 
-void LRU(){
+void LRU_xsb(){
     /*
     思路:
     LRU就是向前版OPT
@@ -171,11 +176,11 @@ void LRU(){
            }
        }
     }
-    cout<<"LRU 缺页数:"<<count<<"\t访问命中率:"<<float(1-float(count)/float(len))<<endl;  
+    cout<<"LRU_xsb 缺页数:"<<count<<"\t访问命中率:"<<float(1-float(count)/float(len))<<endl;  
 
 }
 
-void LFU(){
+void LFU_xsb(){
     vector<int>memory;
     int count = 0; //缺页数
     map<int,int>frequency;
@@ -189,12 +194,12 @@ void LFU(){
             frequency[item]++;
         }else{
             count++;
-            int max=0;
+            int min=999999;
             int change=0;
             int change_num=0;
             for(auto it=frequency.begin();it!=frequency.end();it++){
-                if(it->second>max){
-                    max=it->second;
+                if(it->second<min){
+                    min=it->second;
                     change=it->first;
                 }
             }
@@ -210,6 +215,6 @@ void LFU(){
     // for(auto it=frequency.begin();it!=frequency.end();it++){
     //     cout<<it->first<<" "<<it->second<<endl;
     // }
-    cout<<"LFU 缺页数:"<<count<<"\t访问命中率:"<<float(1-float(count)/float(len))<<"\n\n";  
+    cout<<"LFU_xsb 缺页数:"<<count<<"\t访问命中率:"<<float(1-float(count)/float(len))<<"\n\n";  
 
 }
