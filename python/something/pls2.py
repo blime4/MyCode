@@ -1,3 +1,4 @@
+# -*- coding:UTF-8 -*-
 from tkinter import *
 import tkinter.font as tkfont
 import tkinter as tk
@@ -133,7 +134,7 @@ class student():
                 npa = new_pwd_again.get()
                 global user_data
                 if op == '' or np =='' or npa =='':
-                    tk.messagebox.showinfo(message='请填写完整！')
+                    tk.messagebox.showinfo(message='please input')  
                 elif op != user_data['spwd'].values:
                     tk.messagebox.showinfo(message='原始密码错误！')
                 elif np != npa:

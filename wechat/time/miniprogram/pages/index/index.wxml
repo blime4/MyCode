@@ -1,0 +1,3 @@
+<view>
+<van-button type="primary">time</van-button>
+</view>

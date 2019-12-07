@@ -135,10 +135,10 @@ void FIFO_xsb(){
             count++;
             memory[count%kuaishu]=item;
         }
-        // for(auto val:memory){
-        //    cout<<val<<" ";
-        // }
-        // cout<<endl;
+        for(auto val:memory){
+           cout<<val<<" ";
+        }
+        cout<<endl;
     }
     cout<<"FIFO_xsb 缺页数:"<<count-kuaishu<<"\t访问命中率:"<<float(1-float(count-kuaishu)/float(len))<<endl;
 }
