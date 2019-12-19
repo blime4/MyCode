@@ -8,7 +8,10 @@
         "algorithm": "cpp",
         "array": "cpp",
         "string": "cpp",
-        "string_view": "cpp"
-    },
-    "C_Cpp.errorSquiggles": "Disabled"
+        "string_view": "cpp",
+        "fstream": "cpp",
+        "cstdio": "cpp",
+        "os_fss.h": "c",
+        "stdc++.h": "c"
+    }
 }
