@@ -12,6 +12,11 @@
         "fstream": "cpp",
         "cstdio": "cpp",
         "os_fss.h": "c",
-        "stdc++.h": "c"
+        "stdc++.h": "c",
+        "*.tcc": "cpp",
+        "future": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "typeinfo": "cpp"
     }
 }
