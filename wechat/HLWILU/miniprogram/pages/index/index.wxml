@@ -1,0 +1,9 @@
+<van-row gutter="24" >
+  <van-col span="8" offset="8" wx:if="{{isShowUserName}}">
+    <van-image round width="5rem" height="5rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+  </van-col>
+  <van-col span="8" offset="8" wx:if="{{!isShowUserName}}">
+    <van-button open-type="getUserInfo" lang="zh_CN" type="primary" bindgetuserinfo="onGotUserInfo">授权登陆
+    </van-button>
+  </van-col>
+</van-row>
