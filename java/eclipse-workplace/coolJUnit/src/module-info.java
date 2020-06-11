@@ -1,0 +1,3 @@
+module coolJUnit {
+	requires junit;
+}

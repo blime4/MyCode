@@ -1,0 +1,65 @@
+autostart = False
+version = 2.1.1
+[vbox 127.0.0.1:16600]
+    workingdir = None
+    udp = 16000
+    [[MSR36-20 MSR36-20_2]]
+        image = .
+        device_id = 2
+        bridge_mac = 8a-6a-bb-ac-02-00
+        slot0 = MSR36 512
+        GE_0/0 = S5820V2-54QS-GE_3 GE_0/2
+        x = 135.513239329
+        y = -4126.92643766
+        z = 5.0
+    [[S5820V2-54QS-GE S5820V2-54QS-GE_3]]
+        image = .
+        device_id = 3
+        bridge_mac = 8a-69-74-27-03-00
+        slot0 = S5800 512
+        GE_0/1 = PC_1 GE_0/1
+        GE_0/2 = MSR36-20_2 GE_0/0
+        x = -204.605122421
+        y = -4127.63354444
+        z = 5.0
+    [[PC PC_1]]
+        image = .
+        device_id = 1
+        bridge_mac = 8a-69-4b-26-01-00
+        slot0 = PC 250
+        GE_0/1 = S5820V2-54QS-GE_3 GE_0/1
+        symbol = PC
+        x = -334.005663379
+        y = -3932.47207284
+        z = 5.0
+[GNS3-DATA]
+    m11 = 1.41421356237
+    m22 = 1.41421356237
+    [[NOTE 1]]
+        text = "GE_0/0"
+        x = -92.9998163465
+        y = 25.1212115647
+        interface = MSR36-20_2 GE_0/0
+        font = "Arial,10,-1,5,50,0,0,0,0,0"
+        z = 6.0
+    [[NOTE 2]]
+        text = "GE_0/2"
+        x = 64.9998163465
+        y = 24.8787884353
+        interface = S5820V2-54QS-GE_3 GE_0/2
+        font = "Arial,10,-1,5,50,0,0,0,0,0"
+        z = 6.0
+    [[NOTE 3]]
+        text = "GE_0/1"
+        x = 4.93878257472
+        y = 59.6056000586
+        interface = S5820V2-54QS-GE_3 GE_0/1
+        font = "Arial,10,-1,5,50,0,0,0,0,0"
+        z = 6.0
+    [[NOTE 4]]
+        text = "GE_0/1"
+        x = 45.0612174253
+        y = -37.0
+        interface = PC_1 GE_0/1
+        font = "Arial,10,-1,5,50,0,0,0,0,0"
+        z = 6.0
