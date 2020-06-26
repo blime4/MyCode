@@ -234,7 +234,7 @@ def LL1(inputString):
 
 if __name__=='__main__':
 
-    with open("./test.txt",'r') as gramma:
+    with open("./test.txt",'r',encoding='utf-8') as gramma:
         productions = splitOr(gramma)
         print('产生式：',productions)
 
