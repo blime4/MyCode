@@ -234,7 +234,7 @@ def LL1(inputString):
 
 if __name__=='__main__':
 
-    with open("D:\VSCODE\Compiler\gramma.txt",'r',encoding='utf-8') as gramma:
+    with open("./test.txt",'r') as gramma:
         productions = splitOr(gramma)
         print('产生式：',productions)
 
