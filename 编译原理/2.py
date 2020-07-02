@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 #vt终结符
-Vt=['+','*','(',')','i','#','epsilon']
+Vt=['+','*','(',')','i','#','ε']
 #vn非终结符
 Vn=["E","E'","T","T'","F"]
 #产生式
@@ -83,9 +83,9 @@ def getFollow(curVn):
             elif p[i+1] in Vn:               
                 follow[curVn]=follow[curVn] | first[p[i+1]]
                 follow[curVn]=follow[curVn] | set(getFollow(p[0]))
-                #删去epsilon
-                if 'epsilon' in follow[curVn]:
-                    follow[curVn].discard('epsilon')
+                #删去ε
+                if 'ε' in follow[curVn]:
+                    follow[curVn].discard('ε')
     return follow[curVn]
 
 stringFirst=defaultdict(set)
@@ -98,7 +98,7 @@ def getStringFirst(curPro):
             res.append(curPro[i])
             break
         elif curPro[i] in Vn:
-            if 'epsilon' in first[curPro[i]]:
+            if 'ε' in first[curPro[i]]:
                 res.extend(first[curPro])
             else:
                 res.extend(first[curPro[i]])
@@ -120,7 +120,7 @@ def getM():
         A=curPro[0]
         stringFirst=getStringFirst(curPro)
         for a in stringFirst:
-            if a=='epsilon':                
+            if a=='ε':                
                 continue
             #给分析表相应位置添加产生式
             M.loc[A][a].append(curPro)
@@ -129,7 +129,7 @@ def getM():
         A=curPro[0]
         stringFirst=getStringFirst(curPro)
         #若是空产生式，找产生式左边的FOLLOW集的终结符作为列索引
-        if 'epsilon' in stringFirst:
+        if 'ε' in stringFirst:
             for b in follow[A]:
                 M.loc[A][b].append(curPro)
 
@@ -215,13 +215,13 @@ def LL1(inputString):
             sigStack.pop()
             for ii in range(len2-1):
                 #逆序压栈
-                if prod[len2-ii-1] != 'epsilon':
+                if prod[len2-ii-1] != 'ε':
                     sigStack.push(prod[len2-ii-1])
                     explain='弹出栈顶符号'+sigTop+'，将M['+sigTop+']['+cur+']中的产生式右部逆序压栈'
                     
                 #不压栈
                 else:
-                    explain='弹出栈顶符号'+sigTop+'，因M['+sigTop+']['+cur+']中的产生式右部为epsilon，故不压栈'
+                    explain='弹出栈顶符号'+sigTop+'，因M['+sigTop+']['+cur+']中的产生式右部为ε，故不压栈'
             tb.add_row([i,sigShow,cur,inShow,explain])
             
             #sigTop记录栈顶元素
@@ -234,7 +234,7 @@ def LL1(inputString):
 
 if __name__=='__main__':
 
-    with open("./test.txt",'r',encoding='utf-8') as gramma:
+    with open("./2.txt",'r',encoding='utf-8') as gramma:
         productions = splitOr(gramma)
         print('产生式：',productions)
 
@@ -250,3 +250,6 @@ if __name__=='__main__':
 
     inputString="i+i*i"
     LL1(inputString)
+
+
+

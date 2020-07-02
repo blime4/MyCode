@@ -1,6 +1,5 @@
-E->E+E
-E->E-E
-E->E*E
-E->E/E
-E->(E)
-E->I
+E -> T E'
+E' -> + T E' |¦Å
+T -> F T'
+T' -> * F T' |¦Å
+F -> ( E ) |i
